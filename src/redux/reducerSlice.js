@@ -3,9 +3,9 @@ import { createSlice } from '@reduxjs/toolkit'
 export const functionReducerSlice = createSlice({
   //name定义了action type的前缀,
   //整个action type是由name和reducers中的key合并起来的
-  //在本例中，increment的action type是"functionName/increment"
-  //decrement的action type是"functionName/decrement"
-  name: 'functionName',
+  //在本例中，increment的action type是"actionTypePrefix/increment"
+  //decrement的action type是"actionTypePrefix/decrement"
+  name: 'actionTypePrefix',
   initialState: {
     //初始的状态值
     value: 0
