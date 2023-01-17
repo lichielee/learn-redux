@@ -4,6 +4,8 @@ import functionReducerSlice from './reducerSlice'
 
 export default configureStore({
   reducer: {
-    function: functionReducerSlice
+    //reducer对象的key，是状态的key
+    //这里建立了state的某个属性，与对应的reducer之间的关系
+    stateKey: functionReducerSlice
   }
 })

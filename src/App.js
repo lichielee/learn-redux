@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { decrement, increment } from './redux/reducerSlice'
 
 function App() {
-  const countValue = useSelector(state => state.function.value)
+  const countValue = useSelector(state => state.stateKey.value)
   const dispatch = useDispatch()
 
   return (
