@@ -20,13 +20,10 @@ export const functionReducerSlice = createSlice({
     },
     decrement: state => {
       state.value -= 1
-    },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload
     }
   }
 })
 // 每个 case reducer 函数会生成对应的 Action creators
-export const { increment, decrement, incrementByAmount } = functionReducerSlice.actions
+export const { increment, decrement } = functionReducerSlice.actions
 
 export default functionReducerSlice.reducer
