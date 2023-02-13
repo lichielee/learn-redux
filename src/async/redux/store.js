@@ -1,4 +1,4 @@
-import { configureStore, applyMiddleware } from '@reduxjs/toolkit'
+import { configureStore } from '@reduxjs/toolkit'
 
 import functionReducerSlice, {stateKey} from './reducerSlice'
 

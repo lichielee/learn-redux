@@ -1,6 +1,5 @@
 import './App.css';
 
-import { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux'
 import { decrement, increment, asyncIncrement } from './redux/reducerSlice';
 import { getValue } from './redux/selector';

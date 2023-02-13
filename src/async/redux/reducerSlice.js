@@ -3,11 +3,14 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 export const stateKey = "stateKey";
 
+//createAsyncThunk的作用是提供一个异步函数
+//此异步函数的作用是以异步的方式，向store发出一个action
 export const asyncIncrement = createAsyncThunk(
   'asyncIncrement',
-  async (data, dispatch, getState)=> {
+  async (data, store)=> {
     return await new Promise(function(resolve, reject) {
       setTimeout(()=>{
+        // console.log("store", store);
         resolve(data);
       }, 1000)
     });
@@ -30,7 +33,7 @@ export const functionReducerSlice = createSlice({
       // Redux Toolkit 允许我们在 reducers 写 "可变" 逻辑。它
       // 并不是真正的改变状态值，因为它使用了 Immer 库
       // 可以检测到“草稿状态“ 的变化并且基于这些变化生产全新的不可变的状态
-      // state可以是store中的state的某个属性，具体属性名称，在store.js中有定义
+      // 传入参数state并不是store中的state，而是store中的state的切片（一部分），具体的对应关系在store.js有说明
       state.value += 1
     },
     decrement: state => {
