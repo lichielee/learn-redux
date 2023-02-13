@@ -17,6 +17,8 @@ export const asyncIncrement = createAsyncThunk(
   }
 );
 
+console.log("asyncIncrement", asyncIncrement)
+
 export const functionReducerSlice = createSlice({
   //name定义了action type的前缀,
   //整个action type是由name和reducers中的key合并起来的

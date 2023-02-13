@@ -1,19 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-// import OverviewApp from './overview/App';
-import AsyncApp from './async/App';
+// import App from './overview/App';
+// import App from './async/App';
+import App from './crud/App';
 
 // import store from './overview/redux/store';
-import store from './async/redux/store';
+// import store from './async/redux/store';
+import store from './crud/redux/store';
 import { Provider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      {/*<OverviewApp />*/}
-      <AsyncApp />
+        <App />
     </Provider>
   </React.StrictMode>
 );
