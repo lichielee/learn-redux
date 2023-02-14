@@ -21,8 +21,6 @@ function App() {
     //fixedCacheKey: 'shared-update-counter',
   });
 
-  console.log("data", data)
-
   return (
     <div className="App">
       <header className="App-header">
