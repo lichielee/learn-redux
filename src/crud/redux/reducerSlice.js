@@ -78,6 +78,11 @@ const counterApi = createApi({
         // 比如：invalidate {type: "A", id;"1"}, 只有包含{type: "A", id;"1"}的缓存失效
         // 只有{type: "A"}或者{type: "A", id;"2"}的缓存继续有效
         // 如果返回结果是数组，那么数组的每个元素有自己单独的tag
+
+        // 清除缓存的时机：
+        // 1. 引用计数为0，且到达过期时间
+        // 2. 触发invalid tag
+        // 3. 手动调用refetch
         invalidatesTags: (result, error, queryArg) => {
           return [{ type: 'counter', data: result }];
         },
