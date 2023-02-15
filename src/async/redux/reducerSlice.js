@@ -1,23 +1,22 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-export const stateKey = "stateKey";
+export const stateKey = "stateKeyA";
 
-//createAsyncThunk的作用是提供一个异步函数
-//此异步函数的作用是以异步的方式，向store发出一个action
+//createAsyncThunk的作用是创建异步的action
 export const asyncIncrement = createAsyncThunk(
+    //action的前缀
   'asyncIncrement',
+   //异步逻辑执行函数
   async (data, store)=> {
     return await new Promise(function(resolve, reject) {
       setTimeout(()=>{
         // console.log("store", store);
         resolve(data);
-      }, 1000)
+      }, 1000);
     });
   }
 );
-
-console.log("asyncIncrement", asyncIncrement)
 
 export const functionReducerSlice = createSlice({
   //name定义了action type的前缀,
@@ -30,6 +29,7 @@ export const functionReducerSlice = createSlice({
     value: 0,
     isLoading: false
   },
+  //reducers中定义了action和reducer的对应关系
   reducers: {
     increment: (state,action) => {
       // Redux Toolkit 允许我们在 reducers 写 "可变" 逻辑。它

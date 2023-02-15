@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+//createSlice生成了一个state片段，以及相对应的reducer和action
 export const functionReducerSlice = createSlice({
   //name定义了action type的前缀,
   //整个action type是由name和reducers中的key合并起来的

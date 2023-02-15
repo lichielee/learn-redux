@@ -1,7 +1,9 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 // createApi在本质上，与createSlice是一样的，都是创建一个state的片段
-// createApi在state上建立了一个数据操作（CRUD）对象的状态记录
+// 区别是，createSlice的重点在于自定义state，action和reducer之间的对应关系
+// createApi则是自动创建数据操作（CRUD）的state，以及对应action和reducer之间的对应关系
+// createApi的重点在于管理数据操作的状态，也提供了数据转换，缓存，轮询，错误处理等功能
 const counterApi = createApi({
   // reducerPath定义了此片段在state中的key值，以及action的前缀名
   reducerPath: 'counterApiKey',
