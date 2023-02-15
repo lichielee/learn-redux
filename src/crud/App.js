@@ -17,12 +17,13 @@ function App() {
     // 如果需要在指定的时刻再去取数据，需要在初始化的时候，设置skip为true
     skip,
     // !!!useQuery中，必须向query方法传递参数，pollingInterval才会生效!!!
+    // 此例中，useQuery后的100就是传递的参数
     pollingInterval: 3000,
   });
 
   // useMutation与useQuery不同，在useMutation返回的对象是不同的实例
   // 如果需要useMutation返回相同的实例，需要在两次调用中使用相同的fixedCacheKey
-  const [update, {data: updateData, isUninitialized}] = endpoints.updateCounter.useMutation({
+  const [update, {data: updateData}] = endpoints.updateCounter.useMutation({
     //fixedCacheKey: 'shared-update-counter',
   });
 
@@ -34,7 +35,6 @@ function App() {
         <div
           className="App-link"
         >
-          {/*Function value: {isUpdateSuccess ? updateData : data}*/}
           Function value: {displayData}
         </div>
 
@@ -51,13 +51,13 @@ function App() {
         </button>
 
         <button
-            style={{marginTop: 50}}
-            onClick={
-              () => {
-                setDataType(DataType.updateData)
-                update()
-              }
+          style={{marginTop: 50}}
+          onClick={
+            () => {
+              setDataType(DataType.updateData)
+              update()
             }
+          }
         >
           Update Counter
         </button>
