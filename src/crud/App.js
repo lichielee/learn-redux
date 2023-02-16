@@ -12,7 +12,8 @@ function App() {
   const [skip, setSkip] = useState(true);
   const [dataType, setDataType] = useState(true);
 
-  const {data, isSuccess, isLoading, isError} = endpoints.getCounter.useQuery(100,{
+  //如果调用出现错误，这些错误将封装在error对象中
+  const {data, isSuccess, isLoading, isError, error} = endpoints.getCounter.useQuery(100,{
     // useQuery会在组件挂载完成后，就会开始取数据。
     // 如果需要在指定的时刻再去取数据，需要在初始化的时候，设置skip为true
     skip,
